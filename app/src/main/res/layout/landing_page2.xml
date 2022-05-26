@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".landing_page2">
+
 
     <!--LANDING PAGE!-->
 
@@ -21,91 +22,100 @@
         app:srcCompat="@mipmap/tup"
         tools:ignore="ContentDescription" />
 
-    <!--The title: "Faculty Service Tracker"-->
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/txt_view_way"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/title"
+        android:layout_marginTop="20dp"
+        android:text="@string/title2"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#C41F3B"
-        android:textSize="60sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tup_logo" />
 
-    <!--LOGIN BUTTON FOR landing_page-->
     <Button
-        android:id="@+id/login_btn"
+        android:id="@+id/btn_teacher"
         android:layout_width="270dp"
         android:layout_height="55dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_btn"
-        android:text="@string/login_btn"
+        android:text="@string/btn_teacher"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_way"
+        tools:ignore="UnknownId" />
 
-    <!--shape: rectangle-->
-
-    <ImageView
-        android:id="@+id/ic_rectangle"
-        android:layout_width="414dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="180dp"
-        android:contentDescription="@string/ic_rectangle"
+    <Button
+        android:id="@+id/btn_admin"
+        android:layout_width="270dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_btn"
+        android:text="@string/btn_admin"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
-        app:srcCompat="@drawable/ic_rectangle"
-        tools:ignore="MissingConstraints,ImageContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_teacher" />
 
     <ImageView
-        android:id="@+id/ic_wave1"
+        android:id="@+id/rectangle"
+        android:layout_width="415dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="268dp"
+        android:contentDescription="@string/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_admin"
+        app:srcCompat="@drawable/ic_rectangle"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/wave1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="197dp"
-        android:contentDescription="@string/ic_wave1"
+        android:layout_marginTop="284dp"
+        android:contentDescription="@string/wave1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/btn_admin"
         app:srcCompat="@drawable/ic_wave1"
-        tools:ignore="MissingConstraints,ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/ic_wave3"
+        android:id="@+id/wave3"
         android:layout_width="415dp"
         android:layout_height="189dp"
-        android:contentDescription="@string/ic_wave3"
+        android:layout_marginTop="80dp"
+        android:contentDescription="@string/wave3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
-        app:srcCompat="@drawable/ic_wave3"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_admin"
+        app:srcCompat="@drawable/ic_wave3" />
 
     <ImageView
-        android:id="@+id/ic_wave2"
+        android:id="@+id/wave2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="102dp"
-        android:contentDescription="@string/ic_wave2"
+        android:layout_marginTop="183dp"
+        android:contentDescription="@string/wave2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
-        app:srcCompat="@drawable/ic_wave2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_admin"
+        app:srcCompat="@drawable/ic_wave2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
