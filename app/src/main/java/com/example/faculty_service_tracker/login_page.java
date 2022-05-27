@@ -8,12 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class login_page extends AppCompatActivity {
 
+    /*LOGIN PAGE!*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
-        /*onclick back*/
+        /*Create button for back*/
         ImageView ic_back = findViewById(R.id.ic_back);
         ic_back.setOnClickListener(view -> landing_page2());
 
