@@ -1,22 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!--landing_page-->
     <string name="app_name">faculty_service_tracker</string>
     <string name="tup_logo">logo</string>
     <string name="title">Faculty Service Tracker</string>
     <string name="login_btn">Login</string>
-    <string name="ic_rectangle">rectangle</string>
-    <string name="ic_wave1" tools:ignore="Typos">wave1</string>
-    <string name="ic_wave3">wave3</string>
-    <string name="ic_wave2">wave2</string>
 
     <!--landing_page2-->
     <string name="title2">Who Are You</string>
     <string name="btn_teacher">Teacher</string>
     <string name="btn_admin">Admin</string>
-    <string name="rectangle">ic_rectangle</string>
-    <string name="wave1" tools:ignore="Typos">ic_wave1</string>
-    <string name="wave3">ic_wave3</string>
-    <string name="wave2">ic_wave2</string>
 
     <!--login_page-->
     <string name="edit_txt_password">Password</string>
@@ -26,5 +19,11 @@
     <string name="ic_back">back_btn</string>
     <string name="user_email">Please enter your TUP email</string>
     <string name="user_pass">Password</string>
+
+    <!--wave_layout.xml-->
+    <string name="rectangular">ic_rectangle</string>
+    <string name="wave_1" tools:ignore="Typos">ic_wave1</string>
+    <string name="wave_3">ic_wave3</string>
+    <string name="wave_2">ic_wave2</string>
 
 </resources>

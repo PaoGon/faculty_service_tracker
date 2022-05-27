@@ -9,12 +9,13 @@ import android.widget.ImageView;
 
 public class landing_page2 extends AppCompatActivity {
 
+    /*LANDING PAGE2!*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.landing_page2);
 
-        /*Teacher and Admin button*/
+        /*Create button for Teacher and Admin*/
         Button btn_teacher =findViewById(R.id.btn_teacher);
         Button btn_admin =findViewById(R.id.btn_admin);
         btn_teacher.setOnClickListener(view -> login_page());
@@ -22,7 +23,7 @@ public class landing_page2 extends AppCompatActivity {
 
 
     }
-
+        /*Button for login_page*/
     private void login_page(){
         Intent intent = new Intent(this, login_page.class);
         startActivity(intent);
