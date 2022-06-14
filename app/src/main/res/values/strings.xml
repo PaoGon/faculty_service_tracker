@@ -26,4 +26,103 @@
     <string name="wave_3">ic_wave3</string>
     <string name="wave_2">ic_wave2</string>
 
+    <!--thp_bottom_toolbarxml-->
+    <string name="img_notif_btn">notification button</string>
+    <string name="img_profile_btn">profile button</string>
+    <string name="img_home_btn">home button</string>
+
+
+    <!--thp_top_toolbar.xml-->
+    <string name="imgView_tupLogo">TUP logo</string>
+    <string name="txtView_teacherList">"Teachers List"</string>
+    <string name="img_search_btn">search button</string>
+
+    <!--thp_top_toolbar_services.xml-->
+    <string name="teachers_list">Teachers List</string>
+    <string name="txtView_services">Services</string>
+    <string name="imgView_searchBtn">Search button</string>
+
+    <!--thp_top_toolbar_notif_page.xml-->
+    <string name="imgView_back_btn">back button</string>
+    <string name="txtView_notif">Notification</string>
+
+
+
+    <!-- string array names -->
+    <string-array name="teacher_notif_names_txt">
+        <item>Marvin Abrasaldo</item>
+        <item>Paolo Gonzales</item>
+        <item>Joshua Zion Olano</item>
+        <item>Micah Guinto</item>
+        <item>Rose Marie Nituda</item>
+        <item>Marie Tes</item>
+        <item>Juswa Pogi</item>
+        <item>Tesda Man</item>
+        <item>Bur nick</item>
+        <item>Yunik Garcia</item>
+    </string-array>
+
+    <!-- service Card description  -->
+    <string name="imgDesc">image</string>
+    <string name="date">Date</string>
+    <string name="event">Event</string>
+    <string name="venue">Venue</string>
+
+
+    <!--item recycler_teacher_home-->
+    <string name="imgview">image view</string>
+    <string name="txtview">Position:</string>
+    <string name="txtView">Total Credits:</string>
+    <string name="tvName">Joshua Zion Olano</string>
+    <string name="tvPosition">Asssistant Professor</string>
+    <string name="tvCredits">100</string>
+    <string name="main_container">container</string>
+
+    <!--item_recycler_teacher_notif_page-->
+    <string name="imgView">image</string>
+    <string name="txtName">Joshua Zion Olano</string>
+    <string name="txtNoticee">uploaded his Office Order and it is for review</string>
+
+    <!--string array names TeacherHomeDataModel-->
+    <string-array name="teacher_home_names_txt">
+        <item>Marvin Abrasaldo</item>
+        <item>Paolo Gonzales</item>
+        <item>Joshua Zion Olano</item>
+        <item>Micah Guinto</item>
+        <item>Rose Marie Nituda</item>
+        <item>Marie Tes</item>
+        <item>Juswa Pogi</item>
+        <item>Tesda Man</item>
+        <item>Bur nick</item>
+        <item>Yunik Garcia</item>
+    </string-array>
+
+    <!--string array positions TeacherHomeDataModel-->
+    <string-array name="teacher_home_positions_txt">
+        <item>Assistant Professor</item>
+        <item>Professor</item>
+        <item>Assistant Instructor</item>
+        <item>Instructor</item>
+        <item>Professor</item>
+        <item>Faculty</item>
+        <item>Assistant</item>
+        <item>Assistant Professor</item>
+        <item>Assistant Instructor</item>
+        <item>Assistant Professor</item>
+    </string-array>
+
+    <!--string array credits TeacherHomeDataModel-->
+    <string-array name="teacher_home_credits_txt">
+        <item>100</item>
+        <item>98</item>
+        <item>89</item>
+        <item>70</item>
+        <item>59</item>
+        <item>35</item>
+        <item>31</item>
+        <item>30</item>
+        <item>29</item>
+        <item>20</item>
+    </string-array>
+
 </resources>

@@ -75,6 +75,9 @@
 
     <!--wave layout at the bottom-->
 
-   <include layout="@layout/wave_layout"/>
+    <include
+        layout="@layout/wave_layout"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
