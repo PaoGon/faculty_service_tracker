@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faculty_service_tracker">
         <activity
+            android:name=".Profile_page"
+            android:exported="false" />
+        <activity
             android:name=".teacher_notif_page"
             android:exported="false" />
         <activity
