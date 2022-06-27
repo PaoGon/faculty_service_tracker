@@ -47,7 +47,6 @@
     <string name="txtView_notif">Notification</string>
 
 
-
     <!-- string array names -->
     <string-array name="teacher_notif_names_txt">
         <item>Marvin Abrasaldo</item>
@@ -82,6 +81,13 @@
     <string name="imgView">image</string>
     <string name="txtName">Joshua Zion Olano</string>
     <string name="txtNoticee">uploaded his Office Order and it is for review</string>
+
+    <!--activity_profile_page-->
+    <string name="tvProfile">Profile</string>
+    <string name="tvProfileName">Brent Locke</string>
+    <string name="btn_EditProfile">Edit Profile</string>
+    <string name="btn_LogOut">Log Out</string>
+    <string name="imProfile">image</string>
 
     <!--string array names TeacherHomeDataModel-->
     <string-array name="teacher_home_names_txt">
