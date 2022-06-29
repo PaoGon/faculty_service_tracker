@@ -19,7 +19,7 @@ public class services_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services_page);
 
-        /* Create button for teacher_home_page()*/
+        /* Create button for AdminHomePage()*/
         ImageView btn = findViewById(R.id.img_home_btn);
         btn.setOnClickListener(view -> teacher_home_page());
 
@@ -55,7 +55,7 @@ public class services_page extends AppCompatActivity {
 
     // Home button for teacher home page()
     private void teacher_home_page(){
-        Intent intent = new Intent(this, teacher_home_page.class);
+        Intent intent = new Intent(this, AdminHomePage.class);
         startActivity(intent);
     }
 

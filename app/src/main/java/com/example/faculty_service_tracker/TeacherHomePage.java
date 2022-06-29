@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
 
-public class landing_page2 extends AppCompatActivity {
+public class TeacherHomePage extends AppCompatActivity {
 
     /*LANDING PAGE2!*/
     @Override
@@ -23,9 +22,9 @@ public class landing_page2 extends AppCompatActivity {
 
 
     }
-        /*Button for login_page*/
+        /*Button for LoginPage*/
     private void login_page(){
-        Intent intent = new Intent(this, login_page.class);
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 

@@ -6,12 +6,12 @@
     <string name="title">Faculty Service Tracker</string>
     <string name="login_btn">Login</string>
 
-    <!--landing_page2-->
+    <!--TeacherHomePage-->
     <string name="title2">Who Are You</string>
     <string name="btn_teacher">Teacher</string>
     <string name="btn_admin">Admin</string>
 
-    <!--login_page-->
+    <!--LoginPage-->
     <string name="edit_txt_password">Password</string>
     <string name="txt_view_login">Log in</string>
     <string name="edit_txt_email">Please enter your TUP email</string>
@@ -89,7 +89,7 @@
     <string name="btn_LogOut">Log Out</string>
     <string name="imProfile">image</string>
 
-    <!--string array names TeacherHomeDataModel-->
+    <!--string array names Teacher-->
     <string-array name="teacher_home_names_txt">
         <item>Marvin Abrasaldo</item>
         <item>Paolo Gonzales</item>
@@ -103,7 +103,7 @@
         <item>Yunik Garcia</item>
     </string-array>
 
-    <!--string array positions TeacherHomeDataModel-->
+    <!--string array positions Teacher-->
     <string-array name="teacher_home_positions_txt">
         <item>Assistant Professor</item>
         <item>Professor</item>
@@ -117,7 +117,7 @@
         <item>Assistant Professor</item>
     </string-array>
 
-    <!--string array credits TeacherHomeDataModel-->
+    <!--string array credits Teacher-->
     <string-array name="teacher_home_credits_txt">
         <item>100</item>
         <item>98</item>
@@ -130,5 +130,7 @@
         <item>29</item>
         <item>20</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -29,7 +29,7 @@ public class teacher_notif_page extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
 
-        setUpTeacherNotificationDataModels();
+        //setUpTeacherNotificationDataModels();
 
         TeacherNotifPage_RecyclerViewAdapter adapter = new TeacherNotifPage_RecyclerViewAdapter(this,
                 teacherNotificationDataModels);
@@ -38,19 +38,19 @@ public class teacher_notif_page extends AppCompatActivity {
 
     }
 
-    private void setUpTeacherNotificationDataModels(){
-        String [] teacherNames = getResources().getStringArray(R.array.teacher_notif_names_txt);
-        int [] teacherImages = {R.drawable.mccoy, R.drawable.pao, R.drawable.waaa,R.drawable.ic_pic5,R.drawable.ic_pic4,
-        R.drawable.ic_pic4, R.drawable.ic_pic1, R.drawable.ic_pic3, R.drawable.ic_pic2, R.drawable.ic_pic3};
+    //private void setUpTeacherNotificationDataModels(){
+    //    String [] teacherNames = getResources().getStringArray(R.array.teacher_notif_names_txt);
+    //    int [] teacherImages = {R.drawable.mccoy, R.drawable.pao, R.drawable.waaa,R.drawable.ic_pic5,R.drawable.ic_pic4,
+    //    R.drawable.ic_pic4, R.drawable.ic_pic1, R.drawable.ic_pic3, R.drawable.ic_pic2, R.drawable.ic_pic3};
 
-        for(int i = 0; i <teacherImages.length; i++) {
-            teacherNotificationDataModels.add(new TeacherNotificationDataModel(teacherImages[i], teacherNames[i]));
-        }
-    }
+    //    for(int i = 0; i <teacherImages.length; i++) {
+    //        teacherNotificationDataModels.add(new TeacherNotificationDataModel(teacherImages[i], teacherNames[i]));
+    //    }
+    //}
 
 
     private void teacher_home_page() {
-        Intent intent = new Intent(this, teacher_home_page.class);
+        Intent intent = new Intent(this, AdminHomePage.class);
         startActivity(intent);
     }
 

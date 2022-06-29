@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faculty_service_tracker">
         <activity
-            android:name=".Profile_page"
+            android:name=".ProfilePage"
             android:exported="false" />
         <activity
             android:name=".teacher_notif_page"
@@ -20,13 +20,13 @@
             android:name=".services_page"
             android:exported="false" />
         <activity
-            android:name=".teacher_home_page"
+            android:name=".AdminHomePage"
             android:exported="false" />
         <activity
-            android:name=".login_page"
+            android:name=".LoginPage"
             android:exported="false" />
         <activity
-            android:name=".landing_page2"
+            android:name=".TeacherHomePage"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
