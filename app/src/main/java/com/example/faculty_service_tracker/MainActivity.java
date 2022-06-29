@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Create button to landing_page2*/
+        /*Create button to TeacherHomePage*/
         Button login_btn =findViewById(R.id.login_btn);
         login_btn.setOnClickListener(view -> landing_page2());
 
@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /*Login button for landing_page2*/
+    /*Login button for TeacherHomePage*/
     private void landing_page2() {
-        Intent intent = new Intent(this, landing_page2.class);
+        Intent intent = new Intent(this, TeacherHomePage.class);
         startActivity(intent);
     }
 
