@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".edit_account_page">
+
+    <include
+        android:id="@+id/include11"
+        layout="@layout/thp_top_toolbar_edit_account_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
+
+    <LinearLayout
+        android:id="@+id/L_EditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include11">
+
+        <LinearLayout
+            android:id="@+id/L_Personalinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/include11"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include11">
+
+
+            <TextView
+                android:id="@+id/tvPersonalInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+                android:text="@string/tvPersonalInfo"
+                android:textColor="#C51E3A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvfirstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input"
+                android:hint="@string/hint1"
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
+                android:text="@string/tvMidName"
+                android:textColor="#000000"
+                android:textColorHint="#A1887F"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvMidName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input"
+                android:hint="@string/hint2"
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
+                android:text="@string/tvMidName"
+                android:textColor="#000000"
+                android:textColorHint="#A1887F"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input"
+                android:hint="@string/hint3"
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
+                android:text="@string/tvSurname"
+                android:textColor="#000000"
+                android:textColorHint="#A1887F"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/L_Gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/L_Personalinfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/L_Personalinfo">
+
+            <TextView
+                android:id="@+id/tvGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@string/tvGender"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/RB_Male"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/RB_Male"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/RB_Female"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_weight="1"
+                    android:text="@string/RB_Female"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/L_Position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/L_Gender"
+            app:layout_constraintTop_toBottomOf="@+id/L_Gender">
+
+            <TextView
+                android:id="@+id/tv_Position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@string/tv_Position"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/tvInputPosition1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:height="45dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableEnd="@drawable/ic_drop_down"
+                    android:hint="@string/hint_position"
+                    android:paddingStart="12dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/tvInputPosition1"
+                    android:textColorHint="#A1887F"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_btn"
+            android:gravity="center"
+            android:text="@string/btn_save"
+            android:textColor="#FAFAFA"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/L_Position"
+            app:layout_constraintVertical_bias="1.0" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
