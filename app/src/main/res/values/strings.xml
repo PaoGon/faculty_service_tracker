@@ -89,7 +89,50 @@
     <string name="btn_LogOut">Log Out</string>
     <string name="imProfile">image</string>
 
-    <!--string array names Teacher-->
+    <!--activity_profile_details_page-->
+    <string name="tvProfilePic">Profile Picture</string>
+    <string name="btn_edit">Edit</string>
+    <string name="tvLogInDetails">Log In Details</string>
+    <string name="tvEmail">Email:</string>
+    <string name="tv_InputEmail">brent_locke@tup.edu.ph</string>
+    <string name="tvPassword">Password:</string>
+    <string name="btn_change">Change</string>
+    <string name="tvFullName">Full Name:</string>
+    <string name="tvPersonalInfo">Personal Information</string>
+    <string name="btn_Edit1">Edit</string>
+    <string name="tvInputName">Brent Locke</string>
+    <string name="tv_Position">Position:</string>
+    <string name="tvInputPosition">Professor</string>
+    <string name="tvGender">Gender:</string>
+    <string name="tvInputGender">Male</string>
+
+    <!--activity_edit_account_page-->
+    <string name="tvEditProfile">Edit Profile</string>
+    <string name="tvfirstname" />
+    <string name="tvMidName" />
+    <string name="tvSurname" />
+    <string name="hint1">Juan</string>
+    <string name="hint2">Manuel</string>
+    <string name="hint3">Dela Cruz</string>
+    <string name="RB_Male">Male</string>
+    <string name="RB_Female">Female</string>
+    <string name="tvInputPosition1" />
+    <string name="hint_position">Instructor</string>
+    <string name="btn_save">Save</string>
+
+    <!--activity_change_password_page-->
+    <string name="tvChangePassword">Change Password</string>
+    <string name="hint_OldPassword">Old Password</string>
+    <string name="tv_enterOldPassword">Please enter your old password</string>
+    <string name="tv_enterNewPassword">Please enter your new password</string>
+    <string name="tv_NewPassword"/>
+    <string name="hint_NewPassword">New Password</string>
+    <string name="tvOldPassword" />
+    <string name="tv_RetypePassword"/>
+    <string name="hint_RetypePassword">Retype Password</string>
+
+
+    <!--string array names TeacherHomeDataModel-->
     <string-array name="teacher_home_names_txt">
         <item>Marvin Abrasaldo</item>
         <item>Paolo Gonzales</item>

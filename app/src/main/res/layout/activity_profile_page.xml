@@ -14,7 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-
     <ImageView
         android:id="@+id/imProfile"
         android:layout_width="0dp"
@@ -58,17 +57,17 @@
         <Button
             android:id="@+id/btn_EditProfile"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:drawablePadding="15dp"
-            android:paddingStart="30dp"
-            android:paddingEnd="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="15dp"
+            android:gravity="left|center_vertical"
+            android:paddingStart="30dp"
+            android:paddingEnd="0dp"
             android:text="@string/btn_EditProfile"
             android:textColor="@color/gray"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:gravity="left|center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.306"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,18 +76,19 @@
         <Button
             android:id="@+id/btn_LogOut"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:drawablePadding="15dp"
-            android:paddingStart="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:drawableStart="@drawable/ic_baseline_login_24"
+            android:drawablePadding="15dp"
+            android:gravity="left|center_vertical"
             android:minHeight="48dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="0dp"
             android:text="@string/btn_LogOut"
             android:textColor="@color/gray"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:gravity="left|center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +96,7 @@
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
-    <include layout="@layout/wave_layout" />
+    <include
+        layout="@layout/wave_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
