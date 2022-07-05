@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imgView_service"
+                android:id="@+id/service_pic"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -42,16 +42,16 @@
                 android:paddingEnd="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgView_service">
+                app:layout_constraintTop_toBottomOf="@+id/service_pic">
 
                 <TextView
-                    android:id="@+id/txtView_date"
+                    android:id="@+id/serv_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/date" />
 
                 <TextView
-                    android:id="@+id/txtView_event"
+                    android:id="@+id/serv_event"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
@@ -61,7 +61,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtView_venue"
+                    android:id="@+id/serv_venue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/venue"

@@ -125,10 +125,10 @@
     <string name="hint_OldPassword">Old Password</string>
     <string name="tv_enterOldPassword">Please enter your old password</string>
     <string name="tv_enterNewPassword">Please enter your new password</string>
-    <string name="tv_NewPassword"/>
+    <string name="tv_NewPassword" />
     <string name="hint_NewPassword">New Password</string>
     <string name="tvOldPassword" />
-    <string name="tv_RetypePassword"/>
+    <string name="tv_RetypePassword" />
     <string name="hint_RetypePassword">Retype Password</string>
 
 

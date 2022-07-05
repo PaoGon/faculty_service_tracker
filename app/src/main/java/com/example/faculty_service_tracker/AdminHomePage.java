@@ -21,6 +21,10 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home_page);
 
+        /* Create button for Login to teacher_notif_page() */
+        ImageView btn_login = findViewById(R.id.img_notif_btn);
+        btn_login.setOnClickListener(view -> teacher_notif_page());
+
         FrameLayout container = findViewById(R.id.teacher_container);
         if(container != null){
             Fragment fragment = TeacherFragment.newInstance();
@@ -29,11 +33,6 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
             fragmentTransaction.add(R.id.teacher_container, fragment);
             fragmentTransaction.commit();
         }
-
-        /* Create button for Login to teacher_notif_page() */
-        ImageView btn_login = findViewById(R.id.img_notif_btn);
-        btn_login.setOnClickListener(view -> teacher_notif_page());
-
     }
 
     // notification button for teacher_notif_page()
@@ -45,7 +44,9 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
 
     @Override
     public void onItemSelected(Teacher teacher) {
-        Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(this, "id: " + teacher.getTeacher_id(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(AdminHomePage.this, services_page.class);
+        intent.putExtra("teacher_id", teacher.getTeacher_id());
+        startActivity(intent);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.faculty_service_tracker.model.api;
 
+import com.example.faculty_service_tracker.model.Service;
 import com.example.faculty_service_tracker.model.Teacher;
 import com.example.faculty_service_tracker.model.User;
 
@@ -11,4 +12,8 @@ public class AbstractAPIListener implements APIListener{
 
     @Override
     public void onTeachersLoaded(List<Teacher> teachers) { }
+
+    @Override
+    public void onServicesLoaded(List<Service> services) { }
+
 }

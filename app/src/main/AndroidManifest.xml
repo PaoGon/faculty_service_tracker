@@ -28,7 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".services_page"
-            android:exported="false" />
+            android:exported="false" android:parentActivityName=".AdminHomePage" />
         <activity
             android:name=".AdminHomePage"
             android:exported="false" />

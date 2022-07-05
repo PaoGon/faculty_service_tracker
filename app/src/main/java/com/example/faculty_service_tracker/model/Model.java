@@ -15,6 +15,7 @@ public class Model {
     private final API api;
     private User mUser;
     private List<Teacher> mTeachers;
+    private List<Service> mServices;
 
     public static Model getInstance(Application application){
         if(sInstance == null){
@@ -28,10 +29,11 @@ public class Model {
         mApplication = application;
         api = new WebAPI(mApplication, this);
         mTeachers = new ArrayList<>();
+        mServices = new ArrayList<>();
     }
 
     public List<Teacher> getTeachers() { return mTeachers; }
-
+    public List<Service> getServices() { return mServices; }
     public Application getApplication() {
         return mApplication;
     }
@@ -48,7 +50,7 @@ public class Model {
         this.mUser = user;
     }
 
-    public void loadTeachers(APIListener listener) {
-        api.loadTeachers(listener);
-    }
+    public void loadTeachers(APIListener listener) { api.loadTeachers(listener); }
+
+    public void loadServices(APIListener  listener, int teacher_id){ api.loadServices(listener, teacher_id);}
 }
