@@ -134,24 +134,32 @@
                 android:orientation="horizontal">
 
 
-                <RadioButton
-                    android:id="@+id/RB_Male"
+                <RadioGroup
+                    android:id="@+id/radioGroup"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/RB_Male"
-                    android:textSize="16sp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
 
-                <RadioButton
-                    android:id="@+id/RB_Female"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginEnd="60dp"
-                    android:layout_weight="1"
-                    android:text="@string/RB_Female"
-                    android:textSize="16sp" />
+                    <RadioButton
+                        android:id="@+id/rb_local"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="100dp"
+                        android:text="@string/RB_Male" />
+
+                    <RadioButton
+                        android:id="@+id/rb_international"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="10dp"
+                        android:text="@string/RB_Female" />
+                </RadioGroup>
             </LinearLayout>
 
         </LinearLayout>
@@ -161,6 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:theme="@style/Theme.MaterialComponents.Light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/L_Gender"
             app:layout_constraintTop_toBottomOf="@+id/L_Gender">
@@ -176,33 +185,21 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginEnd="80dp">
+                android:layout_margin="16dp"
+                android:hint="@string/selection"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp">
 
                 <AutoCompleteTextView
-                    android:id="@+id/tvInputPosition1"
+                    android:id="@+id/auto_complete_txt"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:height="45dp"
-                    android:background="@drawable/custom_input"
-                    android:drawableEnd="@drawable/ic_drop_down"
-                    android:hint="@string/hint_position"
-                    android:paddingStart="12dp"
-                    android:paddingTop="5dp"
-                    android:paddingEnd="5dp"
-                    android:paddingBottom="5dp"
-                    android:text="@string/tvInputPosition1"
-                    android:textColorHint="#A1887F"
-                    android:textSize="20sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
 
         <Button
