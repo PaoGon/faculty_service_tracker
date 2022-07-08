@@ -173,8 +173,58 @@
         <item>29</item>
         <item>20</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- create_services.xml -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="selection">Select Position</string>
+
+    <!--  thp_toptoolbar_teacher_create_services  -->
+    <string name="back_btn">back_btn</string>
+    <string name="create_services">Create Services</string>
+
+    <!--  fragment_d_r_a.xml  -->
+    <string name="txtView_upload_your_dra">Upload your DRA</string>
+    <string name="DRA_img">ImageViewDRA</string>
+    <string name="button_next">Next</string>
+
+    <!--  fragment_event_details.xml  -->
+    <string name="textView_event_details">Event Details</string>
+    <string name="event_name">Event Name</string>
+    <string name="sponsor">Sponsor</string>
+    <string name="event_type">Event Type</string>
+    <string name="radioButton_local">Local</string>
+    <string name="radioButton_international">International</string>
+    <string name="textView_starting_date">Starting Date</string>
+    <string name="starting_mm_dd_yy">mm/dd/yy</string>
+    <string name="ending_date">Ending Date</string>
+    <string name="calendar_start">ic_calendar_start</string>
+    <string name="ending_mm_dd_yy">mm/dd/yy</string>
+    <string name="calendar_end">ic_calendar_end</string>
+
+    <!--  fragment_office_order  -->
+    <string name="txtView_upload_your_office_order">Upload your Office Order</string>
+    <string name="office_order_img">office order imageView</string>
+    <!--  fragment_photo_bg.xml  -->
+    <string name="uptxtView_load_your_photo_background">Upload your Photo Background</string>
+    <string name="photo_background_imgView">photo background imageView</string>
+    <!--  fragment_terminal_report  -->
+    <string name="txtView_upload_your_terminal_report">Upload your Terminal Report</string>
+    <string name="TR_img">terminal report imageView</string>
+
+    <!--  thp_toptoolbar_form_review  -->
+    <string name="Back_btn">back button form review page</string>
+
+    <!--  activity_form_review_page1.xml  activity_form_review_page2.xml -->
+    <string name="text_view">Review Service Credits</string>
+    <string name="service_details">Service Details</string>
+    <string name="office_order">Office Order</string>
+    <string name="dra">DRA</string>
+    <string name="terminal_report">Terminal Report</string>
+    <string name="claim_service_credit">Claim Service Credit</string>
+    <string name="text_view2">Please attach the details of your \n Service Credits</string>
+
+
+
+
 
 </resources>

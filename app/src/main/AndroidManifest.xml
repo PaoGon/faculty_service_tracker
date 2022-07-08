@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.faculty_service_tracker">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,6 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Faculty_service_tracker">
+        <activity
+            android:name=".FormReviewPage2"
+            android:exported="false" />
+        <activity
+            android:name=".FormReviewPage1"
+            android:exported="false" />
+        <activity
+            android:name=".create_service_form.create_services"
+            android:exported="false" />
         <activity
             android:name=".change_password_page"
             android:exported="false" />
@@ -28,7 +38,8 @@
             android:exported="false" />
         <activity
             android:name=".services_page"
-            android:exported="false" android:parentActivityName=".AdminHomePage" />
+            android:exported="false"
+            android:parentActivityName=".AdminHomePage" />
         <activity
             android:name=".AdminHomePage"
             android:exported="false" />
