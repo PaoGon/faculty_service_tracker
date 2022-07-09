@@ -11,4 +11,6 @@
     <color name="light_gray">#F5F5F5</color>
     <color name="red">#C51E3A</color>
     <color name="light_red">#FF7F7F</color>
+    <color name="grey">#D1D3D6</color>
+    <color name="bg_tcsp">#EFF0F2</color>
 </resources>

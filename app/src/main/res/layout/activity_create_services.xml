@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".create_service_form.create_services">
+
+    <include
+        android:id="@+id/include9"
+        layout="@layout/thp_toptoolbar_teacher_create_services"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Progress Step bar-->
+    <com.kofigyan.stateprogressbar.StateProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include9"
+        app:spb_animateToCurrentProgressState="true"
+        app:spb_checkStateCompleted="true"
+        app:spb_currentStateDescriptionColor="#C51E3A"
+        app:spb_currentStateNumber="one"
+        app:spb_maxStateNumber="five"
+        app:spb_stateBackgroundColor="@color/grey"
+        app:spb_stateDescriptionColor="#808080"
+        app:spb_stateForegroundColor="#C51E3A"
+        app:spb_stateNumberBackgroundColor="#C51E3A"
+        app:spb_stateNumberForegroundColor="#ffff"
+        app:spb_stateSize="35dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.faculty_service_tracker.create_service_form.EventDetailsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_event_details" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
