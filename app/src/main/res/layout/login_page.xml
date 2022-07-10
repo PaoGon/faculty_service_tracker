@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_view_login"
-        android:autofillHints=""
+        android:autofillHints="username"
         tools:ignore="RtlSymmetry,TextFields" />
 
     <!--user password-->
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_email"
-        android:autofillHints=""
+        android:autofillHints="password"
         tools:ignore="RtlSymmetry" />
 
     <!--wave layout at the bottom-->

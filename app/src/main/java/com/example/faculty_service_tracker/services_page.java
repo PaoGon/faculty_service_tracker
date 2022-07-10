@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.faculty_service_tracker.model.Model;
 import com.example.faculty_service_tracker.model.Service;
 
 import java.util.ArrayList;
@@ -25,17 +26,24 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services_page);
 
+        Model model = Model.getInstance(services_page.this.getApplication());
+
         Intent intent = getIntent();
         int teacher_id = intent.getIntExtra("teacher_id", 0);
         Toast.makeText(this, "id: " + teacher_id , Toast.LENGTH_SHORT).show();
 
         /* Create button for AdminHomePage()*/
-        ImageView btn = findViewById(R.id.img_home_btn);
-        btn.setOnClickListener(view -> teacher_home_page());
+        ImageView home = findViewById(R.id.img_home_btn);
 
         /* Create button for Login to teacher_notif_page() */
-        ImageView btn_login = findViewById(R.id.img_notif_btn);
-        btn_login.setOnClickListener(view -> teacher_notif_page());
+        ImageView notif = findViewById(R.id.img_notif_btn);
+
+        ImageView profile_pic = findViewById(R.id.profile_ic);
+        GlideApp.with(this)
+                .load(model.getUser().getProfile_dir())
+                .placeholder(R.drawable.ic_person)
+                .error(R.drawable.ic_person)
+                .into(profile_pic);
 
         FrameLayout container = findViewById(R.id.service_container);
         if(container != null){
@@ -46,6 +54,9 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
             fragmentTransaction.commit();
         }
 
+        home.setOnClickListener(view -> teacher_home_page());
+        notif.setOnClickListener(view -> teacher_notif_page());
+        profile_pic.setOnClickListener(view -> profile_page());
 
     }
 
@@ -57,9 +68,12 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
 
     // Home button for teacher home page()
     private void teacher_home_page(){
-        //Intent intent = new Intent(this, AdminHomePage.class);
-        //startActivity(intent);
         NavUtils.navigateUpFromSameTask(services_page.this);
+    }
+
+    private void profile_page(){
+        Intent intent = new Intent(this, AdminProfile.class);
+        startActivity(intent);
     }
 
     @Override

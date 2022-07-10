@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.MyViewHolder> {
-    Context context;
-    ArrayList<ServicesDataModel> servicesDataModels;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 

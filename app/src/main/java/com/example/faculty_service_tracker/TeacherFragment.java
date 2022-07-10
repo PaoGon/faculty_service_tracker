@@ -53,8 +53,8 @@ public class TeacherFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            DividerItemDecoration decoration = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
-            recyclerView.addItemDecoration(decoration);
+            //DividerItemDecoration decoration = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
+            //recyclerView.addItemDecoration(decoration);
 
             Application application = this.getActivity().getApplication();
             Model model = Model.getInstance(application);

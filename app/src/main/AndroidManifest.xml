@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faculty_service_tracker">
         <activity
+            android:name=".UpdateProfilePic"
+            android:exported="false" />
+        <activity
             android:name=".FormReviewPage2"
             android:exported="false" />
         <activity
@@ -22,14 +25,26 @@
             android:name=".create_service_form.create_services"
             android:exported="false" />
         <activity
-            android:name=".change_password_page"
+            android:name=".AdminEditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".CreateAccountForm"
+            android:exported="false"
+            android:parentActivityName=".AdminProfile" />
+        <activity
+            android:name=".AdminProfile"
+            android:exported="false"
+            android:parentActivityName=".AdminHomePage" />
+        <activity
+            android:name=".ChangePassword"
             android:exported="false" />
         <activity
             android:name=".edit_account_page"
             android:exported="false" />
         <activity
             android:name=".profile_details_page"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AdminProfile" />
         <activity
             android:name=".ProfilePage"
             android:exported="false" />

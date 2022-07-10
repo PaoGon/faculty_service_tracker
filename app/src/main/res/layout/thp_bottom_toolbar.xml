@@ -27,22 +27,29 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/img_notif_btn"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintEnd_toStartOf="@+id/profile_cont"
         app:layout_constraintStart_toEndOf="@+id/img_home_btn"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_notif"
         tools:ignore="RedundantDescriptionCheck" />
 
-    <ImageView
-        android:id="@+id/imageView8"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_cont"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:contentDescription="@string/img_profile_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_profile"
-        tools:ignore="RedundantDescriptionCheck" />
+        >
+
+        <ImageView
+            android:id="@+id/profile_ic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/img_profile_btn"
+            tools:ignore="RedundantDescriptionCheck" />
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
