@@ -53,9 +53,9 @@ public class AdminEditProfile extends AppCompatActivity {
     public void checkBtn(View view) {
         int radio_id = rd_group.getCheckedRadioButtonId();
         rd_btn =findViewById(radio_id);
-
         String rd_val = rd_btn.getText().toString();
         Toast.makeText(this, "radio: " + rd_val, Toast.LENGTH_SHORT).show();
+
         if(rd_val.equals("Male")){
             gender =  "M";
         }
