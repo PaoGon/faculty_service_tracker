@@ -9,4 +9,5 @@ public interface API {
     void update_info(int acc_id, String full_name, String gender);
     void change_pass(int acc_id, String old_pass, String new_pass);
     void upload_profile(int acc_id, ImageView img);
+    void create_acc(String full_name, String email, String pass, String position, String gender, int type);
 }

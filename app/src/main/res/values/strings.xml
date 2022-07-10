@@ -187,7 +187,7 @@
     <string name="acc_type">Account Type</string>
     <string name="teacher">Teacher</string>
     <string name="admin">Admin</string>
-    <string name="create_account">Create Account</string>
+    <string name="create_account">Create</string>
     <string name="acc_type_admin">Admin</string>
     <string name="edit_ic">edit icon</string>
     <string name="edit_profile">Edit</string>
@@ -242,6 +242,7 @@
     <string name="upload">UPLOAD</string>
     <string name="upload_new_pic">Upload Your New Profile Picture</string>
     <string name="new_profile">Upload Profile</string>
+    <string name="createAccc">Create Account</string>
 
 
 </resources>

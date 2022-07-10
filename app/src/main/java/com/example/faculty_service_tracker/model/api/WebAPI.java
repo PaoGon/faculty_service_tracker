@@ -48,6 +48,7 @@ public class WebAPI implements API{
         mModel = model;
     }
 
+    //upload profile picture
     public void upload_profile(int acc_id, ImageView img){
         String url = base_url + "controllers/upload_profile.php";
         VolleyMultipartRequest multipartRequest = new VolleyMultipartRequest(Request.Method.POST, url, new Response.Listener<NetworkResponse>() {
@@ -132,6 +133,71 @@ public class WebAPI implements API{
 
     }
 
+    //create new account
+    public void create_acc(String full_name, String email, String pass, String position, String gender, int type){
+        String end_point = base_url + "accounts/signup.php";
+        JSONObject jsonObject = new JSONObject();
+
+        try{
+            jsonObject.put("full_name", full_name);
+            jsonObject.put("email", email);
+            jsonObject.put("password", pass);
+            jsonObject.put("position", position);
+            jsonObject.put("gender", gender);
+            jsonObject.put("is_admin", type);
+
+            Response.Listener<JSONObject> successListener = response -> {
+                try {
+
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Toast.makeText(mApplication,  message, Toast.LENGTH_SHORT).show();
+                    Log.i("API_stat", status);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            };
+
+            Response.ErrorListener errorListener = error -> {
+                NetworkResponse networkResponse = error.networkResponse;
+                String result = new String(networkResponse.data);
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                    Log.e("API_stat", status);
+                    Log.e("API_msg", message);
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Toast.makeText(mApplication, "something went wrong", Toast.LENGTH_SHORT).show();
+            };
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, end_point, jsonObject, successListener, errorListener){
+
+                @Override
+                public Map<String, String> getHeaders(){
+                    Map<String, String> headers = new HashMap<>();
+                    headers.put("Content-Type", "application/json; charset=UTF-8");
+                    headers.put("Accept", "application/json");
+                    headers.put("Authorization", "Bearer " + mModel.getUser().getToken());
+                    return headers;
+                }
+            };
+            requestQue.add(request);
+        }
+        catch(JSONException e){
+            e.printStackTrace();
+        }
+    }
+
+    //change password
     public void change_pass(int acc_id, String old_pass, String new_pass){
         String end_point = base_url + "controllers/change_pass.php";
         JSONObject jsonObject = new JSONObject();
@@ -151,8 +217,21 @@ public class WebAPI implements API{
             };
 
             Response.ErrorListener errorListener = error -> {
-                Toast.makeText(mApplication, "something went wrong", Toast.LENGTH_SHORT).show();
-//                Toast.makeText(mApplication, "error" + error, Toast.LENGTH_SHORT).show();
+                NetworkResponse networkResponse = error.networkResponse;
+                String result = new String(networkResponse.data);
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                    Log.e("API_stat", status);
+                    Log.e("API_msg", message);
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             };
 
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, end_point, jsonObject, successListener, errorListener){
@@ -173,6 +252,7 @@ public class WebAPI implements API{
         }
     }
 
+    //update basic account information
     public void update_info(int acc_id, String full_name, String gender){
         String end_point = base_url + "controllers/update_info.php";
         JSONObject jsonObject = new JSONObject();
@@ -192,8 +272,21 @@ public class WebAPI implements API{
             };
 
             Response.ErrorListener errorListener = error -> {
-                Toast.makeText(mApplication, "test: " + acc_id + " "+ full_name + " " + gender, Toast.LENGTH_SHORT).show();
-//                Toast.makeText(mApplication, "error" + error, Toast.LENGTH_SHORT).show();
+                NetworkResponse networkResponse = error.networkResponse;
+                String result = new String(networkResponse.data);
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                    Log.e("API_stat", status);
+                    Log.e("API_msg", message);
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             };
 
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, end_point, jsonObject, successListener, errorListener){
@@ -214,6 +307,7 @@ public class WebAPI implements API{
         }
     }
 
+    //login
     public void login(String email, String password, final APIListener listener){
         String end_point = base_url + "accounts/login.php";
         JSONObject jsonObject = new JSONObject();
@@ -233,7 +327,21 @@ public class WebAPI implements API{
             };
 
             Response.ErrorListener errorListener = error -> {
-                Toast.makeText(mApplication, "error", Toast.LENGTH_SHORT).show();
+                NetworkResponse networkResponse = error.networkResponse;
+                String result = new String(networkResponse.data);
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                    Log.e("API_stat", status);
+                    Log.e("API_msg", message);
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             };
 
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, end_point, jsonObject, successListener, errorListener);
@@ -261,7 +369,21 @@ public class WebAPI implements API{
         };
 
         Response.ErrorListener errorListener = error -> {
-            Toast.makeText(mApplication, "Server Error" + error, Toast.LENGTH_SHORT).show();
+            NetworkResponse networkResponse = error.networkResponse;
+            String result = new String(networkResponse.data);
+            try {
+                JSONObject response = new JSONObject(result);
+                String status = response.getString("status");
+                String message = response.getString("message");
+
+                Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                Log.e("API_stat", status);
+                Log.e("API_msg", message);
+
+                Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         };
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, end_point, null, successListener, errorListener){
@@ -294,7 +416,21 @@ public class WebAPI implements API{
         };
 
         Response.ErrorListener errorListener = error -> {
-            Toast.makeText(mApplication, "Server Error" + error, Toast.LENGTH_SHORT).show();
+            NetworkResponse networkResponse = error.networkResponse;
+            String result = new String(networkResponse.data);
+            try {
+                JSONObject response = new JSONObject(result);
+                String status = response.getString("status");
+                String message = response.getString("message");
+
+                Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                Log.e("API_stat", status);
+                Log.e("API_msg", message);
+
+                Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         };
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, end_point, null, successListener, errorListener) {

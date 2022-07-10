@@ -52,6 +52,10 @@ public class Model {
         api.change_pass(acc_id, old_pass, new_pass);
     }
 
+    public void create_acc(String full_name, String email, String pass, String position, String gender, int type){
+        api.create_acc(full_name, email, pass, position, gender, type);
+    }
+
     public void upload_profile(int acc_id, ImageView img){
         api.upload_profile(acc_id, img);
     }
