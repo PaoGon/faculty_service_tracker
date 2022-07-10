@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".edit_account_page">
-
+    tools:context=".CreateAccountForm">
     <include
         android:id="@+id/include11"
-        layout="@layout/thp_top_toolbar_edit_account_page"
+        layout="@layout/thp_top_toolbar_profile_page"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,15 +21,16 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include11"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.015">
 
         <LinearLayout
-            android:id="@+id/L_Personalinfo"
+            android:id="@+id/CAPersonalinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/include11"
             app:layout_constraintHorizontal_bias="0.0"
@@ -40,18 +39,18 @@
 
 
             <TextView
-                android:id="@+id/tvPersonalInfo"
+                android:id="@+id/tvAdminPersonalInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_weight="1"
-                android:text="@string/tvPersonalInfo"
+                android:text="Personal Information"
                 android:textColor="#C51E3A"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/tvfirstname"
+                android:id="@+id/tvFName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -64,11 +63,10 @@
                 android:paddingTop="5dp"
                 android:paddingEnd="12dp"
                 android:paddingBottom="5dp"
-                android:text="@string/tvMidName"
                 android:textColor="#000000"
                 android:textColorHint="#A1887F"
                 android:textSize="20sp"
-                android:autofillHints="First Name"
+                android:autofillHints="name"
                 android:inputType="text" />
 
             <EditText
@@ -88,12 +86,12 @@
                 android:text="@string/tvMidName"
                 android:textColor="#000000"
                 android:textColorHint="#A1887F"
-                android:autofillHints="surname"
                 android:textSize="20sp"
+                android:autofillHints="name"
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/tvSurname"
+                android:id="@+id/tvSurname2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -102,15 +100,14 @@
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
                 android:hint="@string/surname"
-                android:autofillHints="name"
                 android:paddingStart="12dp"
                 android:paddingTop="5dp"
                 android:paddingEnd="12dp"
                 android:paddingBottom="5dp"
-                android:text="@string/tvSurname"
                 android:textColor="#000000"
                 android:textColorHint="#A1887F"
                 android:textSize="20sp"
+                android:autofillHints="name"
                 android:inputType="text" />
 
         </LinearLayout>
@@ -126,7 +123,7 @@
             app:layout_constraintTop_toBottomOf="@+id/L_Personalinfo">
 
             <TextView
-                android:id="@+id/tvGender"
+                android:id="@+id/tvAccountGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
@@ -145,14 +142,14 @@
                     android:id="@+id/radioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingStart="10dp"
+                    android:gravity="center"
                     android:paddingTop="10dp"
+                    android:paddingStart="10dp"
                     android:paddingEnd="10dp">
 
                     <RadioButton
-                        android:id="@+id/rb_local"
+                        android:id="@+id/RBMale"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="5dp"
@@ -160,7 +157,7 @@
                         android:text="@string/RB_Male" />
 
                     <RadioButton
-                        android:id="@+id/rb_international"
+                        android:id="@+id/RBFemale"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="5dp"
@@ -187,6 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:text="@string/tv_Position"
+                android:layout_marginTop="5dp"
                 android:textColor="#000000"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -203,31 +201,113 @@
                 android:paddingEnd="40dp">
 
                 <AutoCompleteTextView
-                    android:id="@+id/auto_complete_txt"
+                    android:id="@+id/SelectPosition"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAccountInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+                android:text="@string/acc_info"
+                android:textColor="#C51E3A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tvEmail2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:layout_weight="1"
+                android:autofillHints="email"
+                android:background="@drawable/custom_input"
+                android:hint="@string/email_add"
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
+                android:text="@string/email_add"
+                android:textColor="#C6B7B2"
+                android:textColorHint="#A1887F"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@string/acc_type"
+                android:paddingTop="5dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <RadioButton
+                    android:id="@+id/rbTeacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="100dp"
+                    android:text="@string/teacher" />
+
+                <RadioButton
+                    android:id="@+id/RBadmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/admin" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_CreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_btn"
+            android:gravity="center"
+            android:text="@string/create_account"
+            android:textColor="#FAFAFA"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/L_Position"
+            app:layout_constraintVertical_bias="1.0" />
+
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="70dp"
-        android:layout_weight="1"
-        android:background="@drawable/round_btn"
-        android:gravity="center"
-        android:text="@string/btn_save"
-        android:textColor="#FAFAFA"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/L_EditProfile"
-        app:layout_constraintVertical_bias="1.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

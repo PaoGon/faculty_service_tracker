@@ -111,7 +111,7 @@
     <string name="tvfirstname" />
     <string name="tvMidName" />
     <string name="tvSurname" />
-    <string name="hint1">Juan</string>
+    <string name="name">First Name</string>
     <string name="hint2">Manuel</string>
     <string name="hint3">Dela Cruz</string>
     <string name="RB_Male">Male</string>
@@ -177,6 +177,23 @@
     <!-- create_services.xml -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="selection">Select Position</string>
+    <string name="btn_AdminEditProfile">Edit Profile</string>
+    <string name="btn_add">Add Account</string>
+    <string name="btn_adminLogout">Logout</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="surname">Surname</string>
+    <string name="acc_info">Account Information</string>
+    <string name="email_add">Email Address</string>
+    <string name="acc_type">Account Type</string>
+    <string name="teacher">Teacher</string>
+    <string name="admin">Admin</string>
+    <string name="create_account">Create Account</string>
+    <string name="acc_type_admin">Admin</string>
+    <string name="edit_ic">edit icon</string>
+    <string name="edit_profile">Edit</string>
+    <string name="create_acc">Create Account</string>
+    <string name="chang_pass">Change Password</string>
+    <string name="confirm">Confirm</string>
 
     <!--  thp_toptoolbar_teacher_create_services  -->
     <string name="back_btn">back_btn</string>
@@ -222,9 +239,9 @@
     <string name="terminal_report">Terminal Report</string>
     <string name="claim_service_credit">Claim Service Credit</string>
     <string name="text_view2">Please attach the details of your \n Service Credits</string>
-
-
-
+    <string name="upload">UPLOAD</string>
+    <string name="upload_new_pic">Upload Your New Profile Picture</string>
+    <string name="new_profile">Upload Profile</string>
 
 
 </resources>

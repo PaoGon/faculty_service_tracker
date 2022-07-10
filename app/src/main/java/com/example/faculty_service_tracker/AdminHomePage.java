@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.faculty_service_tracker.model.Model;
 import com.example.faculty_service_tracker.model.Teacher;
 
 public class AdminHomePage extends AppCompatActivity implements TeacherFragment.onFragmentInteractionListener{
@@ -21,9 +22,18 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home_page);
 
+        Model model = Model.getInstance(AdminHomePage.this.getApplication());
+
         /* Create button for Login to teacher_notif_page() */
         ImageView btn_login = findViewById(R.id.img_notif_btn);
+        ImageView profile_pic = findViewById(R.id.profile_ic);
         btn_login.setOnClickListener(view -> teacher_notif_page());
+
+        GlideApp.with(this)
+                .load(model.getUser().getProfile_dir())
+                .placeholder(R.drawable.ic_person)
+                .error(R.drawable.ic_person)
+                .into(profile_pic);
 
         FrameLayout container = findViewById(R.id.teacher_container);
         if(container != null){
@@ -33,11 +43,18 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
             fragmentTransaction.add(R.id.teacher_container, fragment);
             fragmentTransaction.commit();
         }
+
+        profile_pic.setOnClickListener(view -> profile_page());
     }
 
     // notification button for teacher_notif_page()
     private void teacher_notif_page() {
         Intent intent = new Intent(this, teacher_notif_page.class);
+        startActivity(intent);
+    }
+
+    private void profile_page(){
+        Intent intent = new Intent(this, AdminProfile.class);
         startActivity(intent);
     }
 
