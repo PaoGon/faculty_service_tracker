@@ -20,6 +20,7 @@ import com.example.faculty_service_tracker.model.Service;
 import java.util.ArrayList;
 
 public class services_page extends AppCompatActivity implements ServiceFragment.onFragmentInteractionListener{
+    int total_credits, teacher_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,8 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
         Model model = Model.getInstance(services_page.this.getApplication());
 
         Intent intent = getIntent();
-        int teacher_id = intent.getIntExtra("teacher_id", 0);
+        teacher_id = intent.getIntExtra("teacher_id", 0);
+        total_credits = intent.getIntExtra("total_credits", 0);
         Toast.makeText(this, "id: " + teacher_id , Toast.LENGTH_SHORT).show();
 
         /* Create button for AdminHomePage()*/
@@ -78,7 +80,17 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
 
     @Override
     public void onItemSelected(Service service) {
-        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(services_page.this, FormReviewPage1.class);
+        intent.putExtra("start_date", service.getStarting_date());
+        intent.putExtra("ending_date", service.getEnding_date());
+        intent.putExtra("venue", service.getVenue());
+        intent.putExtra("sponsor", service.getSponsor());
+        intent.putExtra("lvl_event", service.getLvl_of_event());
+        intent.putExtra("credit", service.getCredit_point());
+        intent.putExtra("teacher_id", teacher_id);
+        intent.putExtra("service_id", service.getService_id());
+        intent.putExtra("total_credits", total_credits);
+        startActivity(intent);
 
     }
 }

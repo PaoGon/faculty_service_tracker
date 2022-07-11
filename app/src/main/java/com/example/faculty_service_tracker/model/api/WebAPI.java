@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.Map;
 
 public class WebAPI implements API{
+//    public static final String base_url = "https://obscure-falls-02126.herokuapp.com/";
     public static final String base_url = "http://192.168.254.101/FST-REST_API/";
 
     private final Application mApplication;
@@ -193,6 +194,66 @@ public class WebAPI implements API{
             requestQue.add(request);
         }
         catch(JSONException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void confirm_service(int teacher_id, int service_id, int total_credits, String starting_date, String ending_date) {
+        String end_point = base_url + "controllers/admin/update_credit.php";
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("teacher_id", teacher_id);
+            jsonObject.put("service_id", service_id);
+            jsonObject.put("total_credits", total_credits);
+            jsonObject.put("starting_date", starting_date);
+            jsonObject.put("ending_date", ending_date);
+
+            Response.Listener<JSONObject> successListener = response -> {
+                try {
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Toast.makeText(mApplication,  message, Toast.LENGTH_SHORT).show();
+                    Log.i("API_stat", status);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            };
+
+            Response.ErrorListener errorListener = error -> {
+                NetworkResponse networkResponse = error.networkResponse;
+                String result = new String(networkResponse.data);
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                    Log.e("API_stat", status);
+                    Log.e("API_msg", message);
+
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            };
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, end_point, jsonObject, successListener, errorListener){
+
+                @Override
+                public Map<String, String> getHeaders(){
+                    Map<String, String> headers = new HashMap<>();
+                    headers.put("Content-Type", "application/json; charset=UTF-8");
+                    headers.put("Accept", "application/json");
+                    headers.put("Authorization", "Bearer " + mModel.getUser().getToken());
+                    return headers;
+                }
+            };
+            requestQue.add(request);
+
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }

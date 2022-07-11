@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faculty_service_tracker">
         <activity
+            android:name=".ServiceDetails"
+            android:exported="false" />
+        <activity
             android:name=".UpdateProfilePic"
             android:exported="false" />
         <activity

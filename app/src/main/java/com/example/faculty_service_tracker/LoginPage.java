@@ -44,9 +44,6 @@ public class LoginPage extends AppCompatActivity {
                         teacherPage();
                     }
                 }
-                else{
-                    Toast.makeText(LoginPage.this, "Error", Toast.LENGTH_SHORT).show();
-                }
             }
         });
     }

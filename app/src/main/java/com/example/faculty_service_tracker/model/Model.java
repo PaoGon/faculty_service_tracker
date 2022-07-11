@@ -56,6 +56,10 @@ public class Model {
         api.create_acc(full_name, email, pass, position, gender, type);
     }
 
+    public void confirm_service(int teacher_id, int service_id, int total_credits, String starting_date, String ending_date){
+        api.confirm_service(teacher_id, service_id, total_credits,starting_date, ending_date);
+    }
+
     public void upload_profile(int acc_id, ImageView img){
         api.upload_profile(acc_id, img);
     }
