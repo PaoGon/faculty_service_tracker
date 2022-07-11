@@ -64,6 +64,7 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
         Toast.makeText(this, "id: " + teacher.getTeacher_id(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AdminHomePage.this, services_page.class);
         intent.putExtra("teacher_id", teacher.getTeacher_id());
+        intent.putExtra("total_credits", teacher.getCredits());
         startActivity(intent);
     }
 }

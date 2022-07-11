@@ -9,46 +9,26 @@
     <!--  Container of all card view  -->
 
     <include
-        android:id="@+id/include8"
-        layout="@layout/thp_top_toolbar_form_review_page"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:id="@+id/include11"
+        layout="@layout/thp_top_toolbar_change_password_page"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:contentDescription="@string/text_view"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:text="@string/text_view"
-        android:textAlignment="center"
-        android:textColor="#C51E3A"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </TextView>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/review_cont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/CSV_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include11">
 
         <!--  Service Details card view      -->
         <androidx.cardview.widget.CardView
@@ -209,6 +189,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/review_cont"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />

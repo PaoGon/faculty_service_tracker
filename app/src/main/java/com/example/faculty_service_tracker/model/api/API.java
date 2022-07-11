@@ -10,4 +10,5 @@ public interface API {
     void change_pass(int acc_id, String old_pass, String new_pass);
     void upload_profile(int acc_id, ImageView img);
     void create_acc(String full_name, String email, String pass, String position, String gender, int type);
+    void confirm_service(int teacher_id, int service_id, int total_credits, String starting_date, String ending_date);
 }
