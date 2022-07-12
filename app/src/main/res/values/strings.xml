@@ -257,6 +257,9 @@
     <string name="details">Details</string>
     <string name="review">Review</string>
     <string name="service_page">Service Details</string>
+    <string name="create_service_btn">create_service</string>
+    <string name="heading_title">Heading Title</string>
+    <string name="create_service_form">Create Service</string>
 
 
 </resources>

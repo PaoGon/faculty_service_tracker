@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.faculty_service_tracker.model.Model;
@@ -33,6 +34,9 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
         teacher_id = intent.getIntExtra("teacher_id", 0);
         total_credits = intent.getIntExtra("total_credits", 0);
         Toast.makeText(this, "id: " + teacher_id , Toast.LENGTH_SHORT).show();
+
+        TextView head = findViewById(R.id.tvEditProfile);
+        head.setText(R.string.txtView_services);
 
         /* Create button for AdminHomePage()*/
         ImageView home = findViewById(R.id.img_home_btn);

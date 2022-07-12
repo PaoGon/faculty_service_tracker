@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.faculty_service_tracker.model.Model;
@@ -20,14 +21,16 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_home_page);
+        setContentView(R.layout.activity_admin_home_page);
 
         Model model = Model.getInstance(AdminHomePage.this.getApplication());
 
-        /* Create button for Login to teacher_notif_page() */
-        ImageView btn_login = findViewById(R.id.img_notif_btn);
+        TextView head = findViewById(R.id.head);
+        head.setText(R.string.teachers_list);
+
+        ImageView btn_notif = findViewById(R.id.img_notif_btn);
         ImageView profile_pic = findViewById(R.id.profile_ic);
-        btn_login.setOnClickListener(view -> teacher_notif_page());
+        btn_notif.setOnClickListener(view -> teacher_notif_page());
 
         GlideApp.with(this)
                 .load(model.getUser().getProfile_dir())

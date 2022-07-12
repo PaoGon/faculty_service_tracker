@@ -5,6 +5,8 @@ import org.json.JSONObject;
 
 public class User {
     public static User getUser(JSONObject jsonObject) throws JSONException{
+        String position;
+        int total_credit;
         String status = jsonObject.getString("success");
         String  acc_id = jsonObject.getString("acc_id");
         String email = jsonObject.getString("email");
@@ -14,7 +16,16 @@ public class User {
         String token = jsonObject.getString("token");
         String gender = jsonObject.getString("gender");
 
-        User user = new User(status, acc_id, email, acc_type, full_name, gender, profile_dir, token);
+        if(acc_type){
+            position = " ";
+            total_credit = 0;
+        }
+        else{
+            position = jsonObject.getString("position");
+            total_credit = jsonObject.getInt("total_credits");
+        }
+
+        User user = new User(status, acc_id, email, acc_type, full_name, gender, profile_dir, position, total_credit, token);
 
         return user;
     }
@@ -25,9 +36,11 @@ public class User {
     private String full_name;
     private String gender;
     private String profile_dir;
+    private String position;
+    private int total_credit;
     private String token;
 
-    public User(String status, String acc_id, String email, Boolean acc_type, String full_name, String gender, String profile_dir, String token) {
+    public User(String status, String acc_id, String email, Boolean acc_type, String full_name, String gender, String profile_dir, String position, int total_credits, String token) {
         this.status = status;
         this.acc_id = acc_id;
         this.email = email;
@@ -35,9 +48,16 @@ public class User {
         this.full_name = full_name;
         this.gender = gender;
         this.profile_dir = profile_dir;
+        this.position = position;
+        this.total_credit = total_credits;
         this.token = token;
 
     }
+
+
+    public String getPosition(){ return position; }
+
+    public int getTotal_credit(){ return total_credit; }
 
     public int getAcc_id() { return Integer.parseInt(acc_id); }
 

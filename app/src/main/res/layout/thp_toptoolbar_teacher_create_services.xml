@@ -18,9 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_back"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="25dp"
             android:contentDescription="@string/back_btn">
-
         </ImageView>
 
         <TextView
