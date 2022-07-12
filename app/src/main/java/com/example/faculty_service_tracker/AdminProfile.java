@@ -6,6 +6,7 @@ import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ public class AdminProfile extends AppCompatActivity {
         TextView name = findViewById(R.id.profile_name);
         Button add_acc = findViewById(R.id.btn_AddAccount2);
         Button edit_profile = findViewById(R.id.btn_AdminEditProfile);
+        Button logout = findViewById(R.id.btn_adminLogout);
 
         name.setText(model.getUser().getFull_name());
 
@@ -36,17 +38,21 @@ public class AdminProfile extends AppCompatActivity {
                 .error(R.drawable.ic_person)
                 .into(profile);
 
-        back.setOnClickListener(view -> admin_home_page());
+        back.setOnClickListener(view -> finish());
         add_acc.setOnClickListener(view -> create_account_form());
         edit_profile.setOnClickListener(view -> edit_profile_page());
+        logout.setOnClickListener(view -> logout());
     }
 
-    private void admin_home_page(){
-        NavUtils.navigateUpFromSameTask(AdminProfile.this);
-    }
 
     private void create_account_form(){
         Intent intent = new Intent(this, CreateAccountForm.class);
+        startActivity(intent);
+    }
+
+    private void logout(){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
@@ -54,4 +60,5 @@ public class AdminProfile extends AppCompatActivity {
         Intent intent = new Intent(this, profile_details_page.class);
         startActivity(intent);
     }
+
 }

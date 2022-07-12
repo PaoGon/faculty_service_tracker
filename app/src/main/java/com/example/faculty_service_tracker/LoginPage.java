@@ -52,12 +52,13 @@ public class LoginPage extends AppCompatActivity {
     private void teacherPage(){
         Intent intent = new Intent(LoginPage.this, TeacherHomePage.class);
         startActivity(intent);
-
+        finish();
     }
 
     private void adminPage() {
         Intent intent = new Intent(LoginPage.this, AdminHomePage.class);
         startActivity(intent);
+        finish();
     }
 
 

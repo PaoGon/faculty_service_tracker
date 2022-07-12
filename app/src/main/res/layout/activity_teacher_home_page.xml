@@ -4,35 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminHomePage">
-
+    tools:context=".services_page">
 
     <include
-        android:id="@+id/include"
-        layout="@layout/thp_top_toolbar"
+        android:id="@+id/include3"
+        layout="@layout/home_page_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/teacher_service_cont"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/teacher_container"
+        android:id="@+id/teacher_service_cont"
         android:layout_width="match_parent"
         android:layout_height="527dp"
         android:paddingTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/include7"
+        app:layout_constraintBottom_toTopOf="@+id/include4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintTop_toBottomOf="@+id/include3" >
+
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/create_service_btn"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@color/red"
+        app:layout_constraintBottom_toBottomOf="@+id/teacher_service_cont"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <include
-        android:id="@+id/include7"
+        android:id="@+id/include4"
         layout="@layout/thp_bottom_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fab"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,16 +39,21 @@ public class profile_details_page extends AppCompatActivity {
 
         email_add.setText(model.getUser().getEmail());
         full_name.setText(model.getUser().getFull_name());
-        position.setText(R.string.acc_type_admin);
+
+
+        if(model.getUser().getAcc_type()) {
+            position.setText(R.string.acc_type_admin);
+        } else{
+            position.setText(model.getUser().getPosition());
+        }
 
         if(model.getUser().getGender().equals("M")){
             gender.setText(R.string.RB_Male);
-        }
-        else{
+        } else{
             gender.setText(R.string.RB_Female);
         }
 
-        back_btn.setOnClickListener(view -> admin_profile_page());
+        back_btn.setOnClickListener(view -> finish());
         info_btn.setOnClickListener(view -> check_acc_type(model));
         change_pass.setOnClickListener(view -> chnage_pass());
         update_profile_pic.setOnClickListener(view -> change_profile_pic());
@@ -85,7 +90,4 @@ public class profile_details_page extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void admin_profile_page(){
-        NavUtils.navigateUpFromSameTask(profile_details_page.this);
-    }
 }

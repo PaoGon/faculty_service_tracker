@@ -1,5 +1,7 @@
 package com.example.faculty_service_tracker.create_service_form;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,8 @@ public class create_services extends AppCompatActivity {
     protected void onCreate(@NonNull Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_services);
+
+        ImageView back = findViewById(R.id.back_frag);
 
         // Next button before for each fragment
         // Button button = findViewById(R.id.btn_next);
@@ -79,6 +83,8 @@ public class create_services extends AppCompatActivity {
 
             nextForm(stateProgressBar);
         });
+
+        back.setOnClickListener(view -> finish());
     }
 
 

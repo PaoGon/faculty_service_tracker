@@ -35,8 +35,6 @@ public class AdminEditProfile extends AppCompatActivity {
         final EditText mid_name = findViewById(R.id.tvMidName);
         Button submit = findViewById(R.id.btn_save);
 
-        full_name = first_name.getText().toString();
-
         submit.setOnClickListener(view -> {
             model.update_info(
                     acc_id,
