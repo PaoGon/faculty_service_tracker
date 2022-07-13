@@ -4,6 +4,7 @@ import android.app.Application;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.faculty_service_tracker.create_service_form.EventDetailsForm;
 import com.example.faculty_service_tracker.model.api.API;
 import com.example.faculty_service_tracker.model.api.APIListener;
 import com.example.faculty_service_tracker.model.api.WebAPI;
@@ -62,6 +63,14 @@ public class Model {
 
     public void upload_profile(int acc_id, ImageView img){
         api.upload_profile(acc_id, img);
+    }
+
+    public void  create_service(int teacher_id, EventDetailsForm service_info, APIListener listener){
+        api.create_service(teacher_id, service_info, listener);
+    }
+
+    public void  upload_service_pic(ImageView img, int teacher_id, int service_id){
+        api.upload_service_pic(img, teacher_id, service_id);
     }
 
     public User getUser() {

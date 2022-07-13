@@ -16,4 +16,7 @@ public class AbstractAPIListener implements APIListener{
     @Override
     public void onServicesLoaded(List<Service> services) { }
 
+    @Override
+    public void onServiceCreated(int service_id) { }
+
 }

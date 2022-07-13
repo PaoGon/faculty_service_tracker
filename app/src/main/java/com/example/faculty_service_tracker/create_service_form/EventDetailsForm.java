@@ -41,4 +41,16 @@ public class EventDetailsForm {
     public String getStarting_date() {
         return starting_date;
     }
+
+    @Override
+    public String toString() {
+        return "EventDetailsForm{" +
+                "event_name='" + event_name + '\'' +
+                ", venue='" + venue + '\'' +
+                ", sponsor='" + sponsor + '\'' +
+                ", event_type='" + event_type + '\'' +
+                ", starting_date='" + starting_date + '\'' +
+                ", ending_date='" + ending_date + '\'' +
+                '}';
+    }
 }

@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.faculty_service_tracker.create_service_form.EventDetailsForm;
 import com.example.faculty_service_tracker.model.AppHelper;
 import com.example.faculty_service_tracker.model.Service;
 import com.example.faculty_service_tracker.model.Teacher;
@@ -29,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +49,93 @@ public class WebAPI implements API{
         mApplication = application;
         requestQue = Volley.newRequestQueue(application);
         mModel = model;
+    }
+
+    //upload service pic
+    public void upload_service_pic(ImageView img, int acc_id, int service_id){
+        String url = base_url + "controllers/services/upload_service_pic.php";
+
+        VolleyMultipartRequest multipartRequest = new VolleyMultipartRequest(Request.Method.POST, url, new Response.Listener<NetworkResponse>() {
+            @Override
+            public void onResponse(NetworkResponse response) {
+                String resultResponse = new String(response.data);
+                try {
+                    JSONObject result = new JSONObject(resultResponse);
+                    String status = result.getString("status");
+                    String message = result.getString("message");
+                    Toast.makeText(mApplication,  message, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                NetworkResponse networkResponse = error.networkResponse;
+                String errorMessage = "Unknown error";
+                if (networkResponse == null) {
+                    if (error.getClass().equals(TimeoutError.class)) {
+                        errorMessage = "Request timeout";
+                    } else if (error.getClass().equals(NoConnectionError.class)) {
+                        errorMessage = "Failed to connect server";
+                    }
+                } else {
+                    String result = new String(networkResponse.data);
+                    try {
+                        JSONObject response = new JSONObject(result);
+                        String status = response.getString("status");
+                        String message = response.getString("message");
+                        String type = response.getString("type");
+
+                        Log.e("API_Error Status", status);
+                        Log.e("API_Error type", type);
+                        Log.e("API_Error Message", message);
+
+                        if (networkResponse.statusCode == 404) {
+                            errorMessage = "Resource not found";
+                        } else if (networkResponse.statusCode == 401) {
+                            errorMessage = message+" Please login again";
+                        } else if (networkResponse.statusCode == 400) {
+                            errorMessage = message+ " Check your inputs";
+                        } else if (networkResponse.statusCode == 500) {
+                            errorMessage = message+" Something is getting wrong";
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                Log.i("Error", errorMessage);
+                error.printStackTrace();
+            }
+        }) {
+
+            @Override
+            protected Map<String, DataPart> getByteData() {
+                Map<String, DataPart> params = new HashMap<>();
+                params.put("file", new DataPart(timestamp.toString()+".jpg", AppHelper.getFileDataFromDrawable(mApplication, img.getDrawable()), "image/jpeg"));
+                Log.i("time", timestamp.toString()+"jpg");
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("acc_id", Integer.toString(acc_id));
+                params.put("service_id", Integer.toString(service_id));
+                return params;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer " + mModel.getUser().getToken());
+                return headers;
+            }
+
+        };
+
+        requestQue.add(multipartRequest);
+
     }
 
     //upload profile picture
@@ -235,6 +324,7 @@ public class WebAPI implements API{
                     Log.e("API_msg", message);
 
                     Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -368,6 +458,69 @@ public class WebAPI implements API{
         }
     }
 
+    //create  service
+    public void create_service(int teacher_id, EventDetailsForm service_info, APIListener listener){
+        String end_point = base_url + "controllers/services/create_services.php";
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("teacher_id", teacher_id);
+            jsonObject.put("event_name", service_info.getEvent_name());
+            jsonObject.put("starting_date", service_info.getStarting_date());
+            jsonObject.put("ending_date", service_info.getEnding_date());
+            jsonObject.put("level_of_event", service_info.getEvent_type());
+            jsonObject.put("sponsor", service_info.getSponsor());
+            jsonObject.put("credit_point", 0);
+            jsonObject.put("venue", service_info.getVenue());
+
+            Response.Listener<JSONObject> successListener = response -> {
+                try {
+                    Toast.makeText(mApplication, response.getString("message") , Toast.LENGTH_SHORT).show();
+                    int service_id = response.getInt("service_id");
+                    Log.e("service_id", " "+service_id);
+                    listener.onServiceCreated(service_id);
+                    //serviceViewModel.setService_id(service_id);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            };
+
+            Response.ErrorListener errorListener = error -> {
+                NetworkResponse networkResponse = error.networkResponse;
+                String result = new String(networkResponse.data);
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    Log.e("API_stat", status);
+                    Log.e("API_msg", message);
+                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            };
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, end_point, jsonObject, successListener, errorListener){
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError{
+                    Map<String, String> headers = new HashMap<>();
+                    headers.put("Content-Type", "application/json; charset=UTF-8");
+                    headers.put("Accept", "application/json");
+                    headers.put("Authorization", "Bearer " + mModel.getUser().getToken());
+                    return headers;
+                }
+            };
+            requestQue.add(request);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     //login
     public void login(String email, String password, final APIListener listener){
         String end_point = base_url + "accounts/login.php";
@@ -395,10 +548,8 @@ public class WebAPI implements API{
                     String status = response.getString("status");
                     String message = response.getString("message");
 
-                    Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
                     Log.e("API_stat", status);
                     Log.e("API_msg", message);
-
                     Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -466,9 +617,18 @@ public class WebAPI implements API{
 
         Response.Listener<JSONArray> successListener = response -> {
             try {
-                List<Service> services = Service.getServices(response);
-                if (listener != null) {
-                    listener.onServicesLoaded(services);
+                if(response.length() > 0){
+                    List<Service> services = Service.getServices(response);
+
+                    Log.d("service_k", " "+response.length());
+
+                    if (listener != null) {
+                        listener.onServicesLoaded(services);
+                    }
+                } else{
+                    Log.d("service_", "test");
+                    Toast.makeText(mApplication, "errror", Toast.LENGTH_SHORT).show();
+
                 }
 
             } catch (JSONException e) {
@@ -484,14 +644,21 @@ public class WebAPI implements API{
                 String status = response.getString("status");
                 String message = response.getString("message");
 
+                List<Service> services = Collections.<Service>emptyList();
+
+
                 Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
                 Log.e("API_stat", status);
                 Log.e("API_msg", message);
 
+                if (listener != null) {
+                    listener.onServicesLoaded(services);
+                }
                 Toast.makeText(mApplication, message, Toast.LENGTH_SHORT).show();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
         };
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, end_point, null, successListener, errorListener) {

@@ -78,14 +78,7 @@ public class PhotoBgFragment extends Fragment {
         view.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Initialize Convert Image bitmap to String "Method"
-                String imgString = imageToString(bitmap);
-
-                //Declare instance of Object
-                PhotoBgForm photoBgForm = new PhotoBgForm(imgString);
-
-
-                formViewModel.setData(photoBgForm);
+                formViewModel.setPhotoBg(photo_bg_img);
             }
         });
     }
@@ -113,13 +106,5 @@ public class PhotoBgFragment extends Fragment {
                 e.printStackTrace();
             }
         }
-    }
-
-    //Convert Image bitmap to String
-    private String imageToString(Bitmap bitmap){
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-        byte[] imgBytes = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(imgBytes,Base64.DEFAULT);
     }
 }

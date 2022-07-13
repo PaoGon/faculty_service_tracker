@@ -34,6 +34,7 @@ public class AdminProfile extends AppCompatActivity {
 
         GlideApp.with(this)
                 .load(model.getUser().getProfile_dir())
+                .circleCrop()
                 .placeholder(R.drawable.ic_person)
                 .error(R.drawable.ic_person)
                 .into(profile);

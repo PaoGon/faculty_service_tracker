@@ -1,5 +1,7 @@
 package com.example.faculty_service_tracker.create_service_form;
 
+import android.widget.ImageView;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -7,28 +9,28 @@ import androidx.lifecycle.ViewModel;
 public class FormViewModel extends ViewModel {
 
     private final MutableLiveData<EventDetailsForm> eventDetailsForm = new MutableLiveData<EventDetailsForm>();
-    private final MutableLiveData<OfficeOrderForm> officeOrderForm = new MutableLiveData<OfficeOrderForm>();
-    private final MutableLiveData<DRAForm> draForm  = new MutableLiveData<DRAForm>();
-    private final MutableLiveData<TerminalReportForm> terminalReportForm = new MutableLiveData<TerminalReportForm>();
-    private final MutableLiveData<PhotoBgForm> photoBgForm = new MutableLiveData<PhotoBgForm>();
+    private final MutableLiveData<ImageView> officeOrderForm = new MutableLiveData<ImageView>();
+    private final MutableLiveData<ImageView> draForm  = new MutableLiveData<ImageView>();
+    private final MutableLiveData<ImageView> terminalReportForm = new MutableLiveData<ImageView>();
+    private final MutableLiveData<ImageView> photoBgForm = new MutableLiveData<ImageView>();
 
     public void setData(EventDetailsForm item){
         eventDetailsForm.setValue(item);
     }
 
-    public void setData(OfficeOrderForm obj){
+    public void setOfficeOrderImg(ImageView obj){
         officeOrderForm.setValue(obj);
     }
 
-    public void setData(DRAForm objDra){
+    public void setDraImg(ImageView objDra){
         draForm.setValue(objDra);
     }
 
-    public void setData(TerminalReportForm objTr){
+    public void setTrImg(ImageView objTr){
         terminalReportForm.setValue(objTr);
     }
 
-    public void setData(PhotoBgForm objPtb){
+    public void setPhotoBg(ImageView objPtb){
         photoBgForm.setValue(objPtb);
     }
 
@@ -38,21 +40,19 @@ public class FormViewModel extends ViewModel {
 
     }
 
-    public LiveData<OfficeOrderForm> getOfficeOder(){
-
+    public LiveData<ImageView> getOfficeOder(){
         return officeOrderForm;
     }
 
-    public LiveData<DRAForm> getDra(){
-
+    public LiveData<ImageView> getDra(){
         return draForm;
     }
 
-    public LiveData<TerminalReportForm> getTerminalReport(){
+    public LiveData<ImageView> getTerminalReport(){
         return terminalReportForm;
     }
 
-    public LiveData<PhotoBgForm> getPhotoBg(){
+    public LiveData<ImageView> getPhotoBg(){
         return photoBgForm;
     }
 

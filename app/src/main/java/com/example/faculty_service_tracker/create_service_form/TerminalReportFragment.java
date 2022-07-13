@@ -71,13 +71,7 @@ public class TerminalReportFragment extends Fragment {
         view.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String imgString = imageToString(bitmap);
-
-                //Declare instance of Object.
-                TerminalReportForm terminalReportForm = new TerminalReportForm(imgString);
-
-
-                formViewModel.setData(terminalReportForm);
+                formViewModel.setTrImg(terminal_report_img);
             }
         });
     }
@@ -105,11 +99,4 @@ public class TerminalReportFragment extends Fragment {
         }
     }
 
-    //Convert Image to String
-    private String imageToString(Bitmap bitmap){
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-        byte[] imgBytes = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(imgBytes,Base64.DEFAULT);
-    }
 }

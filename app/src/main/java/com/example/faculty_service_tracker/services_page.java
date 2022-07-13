@@ -30,6 +30,8 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
 
         Model model = Model.getInstance(services_page.this.getApplication());
 
+        ImageView back = findViewById(R.id.imgView_back_btn);
+
         Intent intent = getIntent();
         teacher_id = intent.getIntExtra("teacher_id", 0);
         total_credits = intent.getIntExtra("total_credits", 0);
@@ -47,6 +49,7 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
         ImageView profile_pic = findViewById(R.id.profile_ic);
         GlideApp.with(this)
                 .load(model.getUser().getProfile_dir())
+                .circleCrop()
                 .placeholder(R.drawable.ic_person)
                 .error(R.drawable.ic_person)
                 .into(profile_pic);
@@ -60,6 +63,7 @@ public class services_page extends AppCompatActivity implements ServiceFragment.
             fragmentTransaction.commit();
         }
 
+        back.setOnClickListener(view -> finish());
         home.setOnClickListener(view -> teacher_home_page());
         notif.setOnClickListener(view -> teacher_notif_page());
         profile_pic.setOnClickListener(view -> profile_page());

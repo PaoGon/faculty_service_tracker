@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -37,12 +38,14 @@ public class TeacherHomePage extends AppCompatActivity implements ServiceFragmen
 
         GlideApp.with(this)
                 .load(model.getUser().getProfile_dir())
+                .circleCrop()
                 .placeholder(R.drawable.ic_person)
                 .error(R.drawable.ic_person)
                 .into(profile_pic);
 
         FrameLayout container = findViewById(R.id.teacher_service_cont);
         if(container != null){
+            Log.d("acc_id", " " + model.getUser().getAcc_id());
             Fragment fragment = ServiceFragment.newInstance(model.getUser().getAcc_id());
             FragmentManager fragmentManager =getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

@@ -10,4 +10,5 @@ public interface APIListener {
     void onlogin(User user);
     void onTeachersLoaded(List<Teacher> teachers);
     void onServicesLoaded(List<Service> services);
+    void onServiceCreated(int service_id);
 }

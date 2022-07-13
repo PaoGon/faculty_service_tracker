@@ -7,27 +7,18 @@
     android:background="@color/white"
     tools:context=".profile_details_page">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar5"
-        android:layout_width="match_parent"
+
+    <include
+        android:id="@+id/profile_details_head"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imgView_back_btn"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:contentDescription="@string/imgView_back_btn"
-        app:layout_constraintStart_toStartOf="@+id/toolbar5"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back"
-        tools:ignore="RedundantDescriptionCheck" />
+        layout="@layout/thp_top_toolbar_change_password_page"/>
+
+
 
     <LinearLayout
         android:id="@+id/l_ProfileDetails"
@@ -36,7 +27,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar5">
+        app:layout_constraintTop_toBottomOf="@+id/profile_details_head">
 
         <LinearLayout
             android:id="@+id/l_ProfilePicEdit"
@@ -53,20 +44,9 @@
                 android:id="@+id/l_ProfilePicEdit1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="end"
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
-
-                <TextView
-                    android:id="@+id/tvProfilePic"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="@string/tvProfilePic"
-                    android:textColor="#C51E3A"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/profile_pic_edit_btn"

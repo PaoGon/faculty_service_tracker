@@ -57,6 +57,7 @@ public class TeachersAdapter extends RecyclerView.Adapter<TeachersAdapter.MyView
 
         GlideApp.with(this.mFragment)
                 .load(teacher.getImage())
+                .circleCrop()
                 .placeholder(R.drawable.ic_person)
                 .error(R.drawable.ic_person)
                 .into(holder.profile);
