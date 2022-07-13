@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.faculty_service_tracker.model.Model;
 
@@ -20,6 +21,7 @@ public class profile_details_page extends AppCompatActivity {
         setContentView(R.layout.activity_profile_details_page);
 
         Model model = Model.getInstance(profile_details_page.this.getApplication());
+
 
         ImageView back_btn = findViewById(R.id.imgView_back_btn);
         ImageView profile = findViewById(R.id.imProfile);
@@ -33,6 +35,7 @@ public class profile_details_page extends AppCompatActivity {
 
         GlideApp.with(this)
                 .load(model.getUser().getProfile_dir())
+                .circleCrop()
                 .placeholder(R.drawable.ic_person)
                 .error(R.drawable.ic_person)
                 .into(profile);

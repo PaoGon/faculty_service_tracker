@@ -34,6 +34,7 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
 
         GlideApp.with(this)
                 .load(model.getUser().getProfile_dir())
+                .circleCrop()
                 .placeholder(R.drawable.ic_person)
                 .error(R.drawable.ic_person)
                 .into(profile_pic);
@@ -64,7 +65,6 @@ public class AdminHomePage extends AppCompatActivity implements TeacherFragment.
 
     @Override
     public void onItemSelected(Teacher teacher) {
-        Toast.makeText(this, "id: " + teacher.getTeacher_id(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AdminHomePage.this, services_page.class);
         intent.putExtra("teacher_id", teacher.getTeacher_id());
         intent.putExtra("total_credits", teacher.getCredits());

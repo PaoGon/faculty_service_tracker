@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".create_service_form.create_services">
 
     <include
@@ -19,10 +19,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/fragmentContainerView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include9"
+        app:layout_constraintVertical_bias="0.48000002"
         app:spb_animateToCurrentProgressState="true"
         app:spb_checkStateCompleted="true"
         app:spb_currentStateDescriptionColor="#C51E3A"
@@ -41,10 +42,10 @@
         android:name="com.example.faculty_service_tracker.create_service_form.EventDetailsFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/progress_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar"
         tools:layout="@layout/fragment_event_details" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

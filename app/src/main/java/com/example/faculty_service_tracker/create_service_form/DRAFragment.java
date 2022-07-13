@@ -78,13 +78,7 @@ public class DRAFragment extends Fragment {
         view.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String imgString = imageToString(bitmap);
-
-                //Declare instance of Object
-                DRAForm draForm = new DRAForm(imgString);
-
-
-                formViewModel.setData(draForm);
+                formViewModel.setDraImg(dra_img);
             }
         });
 

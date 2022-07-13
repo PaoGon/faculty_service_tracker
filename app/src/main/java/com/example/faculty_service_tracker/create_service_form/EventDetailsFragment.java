@@ -121,7 +121,7 @@ public class EventDetailsFragment extends Fragment implements DatePickerDialog.O
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-        String date = month + "/" + dayOfMonth + "/" + year;
+        String date = year + "-" + month + "-" + dayOfMonth;
 
         if(counter == 0){
             counter+=1;

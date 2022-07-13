@@ -260,6 +260,7 @@
     <string name="create_service_btn">create_service</string>
     <string name="heading_title">Heading Title</string>
     <string name="create_service_form">Create Service</string>
+    <string name="profile_details">Prodile Details</string>
 
 
 </resources>

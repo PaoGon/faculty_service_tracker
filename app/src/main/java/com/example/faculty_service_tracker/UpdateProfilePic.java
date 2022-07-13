@@ -78,13 +78,6 @@ public class UpdateProfilePic extends AppCompatActivity {
         }
     }
 
-    private String imageToString(Bitmap bitmap){
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-        byte[] imgBytes = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(imgBytes,Base64.DEFAULT);
-    }
-
     private void upload_new_profile(Model model){
         model.upload_profile(
                 model.getUser().getAcc_id(),

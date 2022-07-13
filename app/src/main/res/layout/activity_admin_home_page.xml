@@ -18,7 +18,7 @@
         android:id="@+id/teacher_container"
         android:layout_width="match_parent"
         android:layout_height="527dp"
-        android:paddingTop="20dp"
+        android:paddingTop="5dp"
         app:layout_constraintBottom_toTopOf="@+id/include7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

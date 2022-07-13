@@ -72,12 +72,7 @@ public class OfficeOrderFragment extends Fragment {
         view.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String imgString = imageToString(bitmap);
-                //Declare instance of Obj.
-                OfficeOrderForm officeOrderForm = new OfficeOrderForm(imgString);
-
-
-                formViewModel.setData(officeOrderForm);
+                formViewModel.setOfficeOrderImg(office_img);
             }
         });
     }
